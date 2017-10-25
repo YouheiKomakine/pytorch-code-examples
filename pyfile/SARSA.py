@@ -29,8 +29,9 @@ class Q_table_function(object):
         self.last_state = None
         self.last_action = None
     
-    def estimate_q_value(self, state, action=None):
-        self.last_state, self.last_action = state, action
+    def estimate_q_value(self, state, action=None, update_last_flag=True):
+        if update_last_flag:
+            self.last_state, self.last_action = state, action
         if action is None:
             return self.q_table[state]
         else:
@@ -97,8 +98,9 @@ class Policy_e_greedy(object):
         else:
             action = int(np.random.choice(index_of_less_selected, 1))
 
-    def choose_act(self, state, update_flag=True):
-        if np.random.choice([1, 0], p=[self.epsilon, 1-self.epsilon]):
+    def choose_act(self, state, update_flag=True, epsilon=None):
+        epsilon = self.epsilon if epsilon is None else epsilon
+        if np.random.choice([1, 0], p=[epsilon, 1-epsilon]):
             action = int(np.random.choice(range(action_space_size)))
         else:
             action = self.choose_act_greedy(state)
@@ -165,8 +167,8 @@ class Agent_SARSA(object):
             self.policy_function = policy_function
 
 
-    def act(self, state, update_flag=True):
-        action = self.policy_function.choose_act(state, update_flag=update_flag)
+    def act(self, state, update_flag=True, epsilon=None):
+        action = self.policy_function.choose_act(state, update_flag=update_flag, epsilon=epsilon)
         self.last_state, self.last_action = state, action
         return action
 
