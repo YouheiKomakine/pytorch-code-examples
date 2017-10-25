@@ -150,7 +150,7 @@ class Agent_SARSA(object):
         self.last_state = None
         self.last_action = None
 
-        self.state_function = self.state_function
+        self.state_function = state_function
 
         if q_function is None:
             self.q_function = Q_table_function(self.state_space_size, self.action_space_size,
