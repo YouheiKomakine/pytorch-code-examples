@@ -27,6 +27,7 @@
 
 import numpy as np
 import copy
+import ipywidgets
 
 class Environment_FrozenLake(object):
     def __init__(self, map_size=(4,4), slip_rate=0.33, hole_num=(1,3), 
@@ -63,10 +64,6 @@ class Environment_FrozenLake(object):
                             checkmap[min(self.map_size[1]-1,h+1)][w]==1 or checkmap[h][min(self.map_size[0]-1,w+1)]==1:
                             checkmap[h][w] = 1
                             
-        # for debug
-        #print("checkmap, ", checkmap)
-        #can_reach=True
-                            
         can_reach = True if checkmap[(self.goal[0],self.goal[1])]==1 else False
         return can_reach
                             
@@ -79,10 +76,6 @@ class Environment_FrozenLake(object):
         self.map[(self.goal[0],self.goal[1])] = 3
         retry_count = [0,0]
         success_check = False
-        
-        # for debug
-        #print("start, goal = ", self.start, self.goal)
-        #print("generate_map, before, \n", self.map)
                 
         while (retry_count[1] < max_retry[1]) and (success_check==False):
             while (retry_count[0] < max_retry[0]) and (success_check==False):
@@ -104,17 +97,37 @@ class Environment_FrozenLake(object):
                 retry_count[1] += 1
         return success_check
 
-    def show_map(self, raw_data=False):
+    def show_map(self, raw_data=False, player_position=False, print_map=True, end="\n", 
+                 raw_array=False, html=False):
         map_text = ""
+        output = ""
+        if raw_array:
+            return self.map
+        
         for h in range(self.map_size[0]):
             for w in range(self.map_size[1]):
                 map_text += self.ground_name[self.map[h][w]]
                 if w == self.map_size[1]-1:
-                    map_text += "\n"
+                    map_text += end
         if raw_data:
-            print(self.map)
+            output += str(self.map) + end
         else:
-            print(map_text)
+            output += map_text + end
+        if player_position:
+            output += "player (x,y) = " + str(self.player_position) + end
+        
+        if html:
+            player_pos = self.player_position[1] * (self.map_size[0]+1) + self.player_position[0]
+            pre = output[:player_pos] if player_pos>=1 else ""
+            post = output[player_pos+1:] if player_pos <= len(output)-1 else ""
+            html_text = pre + '<font color="red">' + output[player_pos] + '</font>' + post 
+            html_text = html_text.replace("\n","<br />")
+            return html_text
+
+        if print_map:
+            print(output)
+        else:
+            return output
                 
     def return_next(self, action=None, render_flag=False):
         if action is None:
@@ -123,28 +136,30 @@ class Environment_FrozenLake(object):
         # move direction
         move_p = np.array(self.action[action]) # action={0:(0,-1), 1:(1,0), 2:(0,1), 3:(-1,0)} in default settings
         slip_A, slip_B = move_p[::-1], move_p[::-1]*-1
-        move = np.random.choice([move_p, slip_A, slip_B],
-                                p=[1-self.slip_rate, self.slip_rate/2, self.slip_rate/2])
+
+        move = np.array([move_p, slip_A, slip_B])[np.random.choice(3, 1, p=[1-self.slip_rate, self.slip_rate/2, self.slip_rate/2])][0]
 
         if self.reach_to_outside_map==False:
-            self.player_position[0] = min(max(self.player_position[0]+move[0], 0), self.max_size[0]-1)
-            self.player_position[1] = min(max(self.player_position[1]+move[1], 0), self.max_size[1]-1)
+            self.player_position[0] = min(max(self.player_position[0]+move[0], 0), self.map_size[0]-1)
+            self.player_position[1] = min(max(self.player_position[1]+move[1], 0), self.map_size[1]-1)
         else:
             self.player_position = self.player_position + move
-
+            
         # goal / hole check
         if (self.player_position[0]<0) or (self.map_size[0]-1 < self.player_position[0]) \
-            or (self.player_position[1]<0) or (self.map_size[1]-1 < self.player_position[1]) \
-            or self.map[self.player_position] == 4: # Hole or Outside of map
+            or (self.player_position[1]<0) or (self.map_size[1]-1 < self.player_position[1]): # Outside of map
             self.reward = -1
             self.done = True
-        elif self.map[self.player_position] == 3: # Goal
+        elif self.map[(self.player_position[1], self.player_position[0])] == 4: # Hole
+            self.reward = -1
+            self.done = True
+        elif self.map[(self.player_position[1], self.player_position[0])] == 3: # Goal
             self.reward = 1
             self.done = True
         else:
             self.reward = 0
             self.done = False
-
+            
         next_state = self.player_position[1] * self.map_size[0] + self.player_position[0]
 
         return self.reward, next_state, self.done
