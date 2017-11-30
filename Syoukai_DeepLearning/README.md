@@ -10,6 +10,9 @@
 
 |notebook|内容|進行状況|
 |:--|:--|:--|
-|[Syoukai_DeepLearning_1.ipynb](https://github.com/YouheiKomakine/study_memo/blob/master/Syoukai_DeepLearning/Syoukai_DeepLearning_1.ipynb)|第３章パーセプトロン<br />　3-1　ニューラルネットワークとは<br />　3-2　回路としてのニューラルネットワーク<br />　3-3　単純パーセプトロン<br />　3-4　ロジスティック回帰|完了|
+|[Syoukai_DeepLearning_1.ipynb](https://github.com/YouheiKomakine/study_memo/blob/master/Syoukai_DeepLearning/Syoukai_DeepLearning_1.ipynb)|第３章　パーセプトロン<br />　3-1　ニューラルネットワークとは<br />　3-2　回路としてのニューラルネットワーク<br />　3-3　単純パーセプトロン<br />　3-4　ロジスティック回帰|完了|
 |[Syoukai_DeepLearning_2.ipynb](https://github.com/YouheiKomakine/study_memo/blob/master/Syoukai_DeepLearning/Syoukai_DeepLearning_2.ipynb)|　3-5　多クラスロジスティック回帰|完了|
 |[Syoukai_DeepLearning_3.ipynb](https://github.com/YouheiKomakine/study_memo/blob/master/Syoukai_DeepLearning/Syoukai_DeepLearning_3.ipynb)|　3-6　多層パーセプトロン<br />　3-7　モデルの評価|完了|
+|[Syoukai_DeepLearning_4.ipynb](https://github.com/YouheiKomakine/study_memo/blob/master/Syoukai_DeepLearning/Syoukai_DeepLearning_4.ipynb)|第４章　ディープニューラルネットワーク<br />　4-1　ディープラーニングへの準備<br />　4-2　学習における問題（勾配消失問題、Overfitting）<br />　4-3　学習の効率化（4.3.1 活性化関数　まで）|完了|
+|[Syoukai_DeepLearning_5.ipynb](https://github.com/YouheiKomakine/study_memo/blob/master/Syoukai_DeepLearning/Syoukai_DeepLearning_5.ipynb)|　　4.3.2　ドロップアウト|完了|
+
