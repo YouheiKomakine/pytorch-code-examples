@@ -6,7 +6,7 @@ This repository is a personal log of my study, mainly written in japanese langua
   
 ### <教材とノートの内容>  
 #### AizuOnlineJudge_n.ipynb  （終了）
-　プログラミング基礎の訓練として、[Aizu Online Judge]の初心者向けコースから    
+　プログラミング基礎の訓練として、[Aizu Online Judge](http://judge.u-aizu.ac.jp/onlinejudge/)の初心者向けコースから    
 　"Introduction to Programming 1" 全11コース（44題）について解答しています。  
     
 #### Deep_Learning_from_Scratch_n.ipynb  （終了）
