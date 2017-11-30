@@ -15,4 +15,4 @@
 |[Syoukai_DeepLearning_3.ipynb](https://github.com/YouheiKomakine/study_memo/blob/master/Syoukai_DeepLearning/Syoukai_DeepLearning_3.ipynb)|　3-6　多層パーセプトロン<br />　3-7　モデルの評価|完了|
 |[Syoukai_DeepLearning_4.ipynb](https://github.com/YouheiKomakine/study_memo/blob/master/Syoukai_DeepLearning/Syoukai_DeepLearning_4.ipynb)|第４章　ディープニューラルネットワーク<br />　4-1　ディープラーニングへの準備<br />　4-2　学習における問題（勾配消失問題、Overfitting）<br />　4-3　学習の効率化（4.3.1 活性化関数　まで）|完了|
 |[Syoukai_DeepLearning_5.ipynb](https://github.com/YouheiKomakine/study_memo/blob/master/Syoukai_DeepLearning/Syoukai_DeepLearning_5.ipynb)|　　4.3.2　ドロップアウト|完了|
-
+|[Syoukai_DeepLearning_6.ipynb](https://github.com/YouheiKomakine/study_memo/blob/master/Syoukai_DeepLearning/Syoukai_DeepLearning_5.ipynb)|　4-4　実装の設計<br />　4-5　高度なテクニック<br />　　4.5.1　データの正規化と重みの初期化（前半まで）<br />　Addiional：画像へのPCA、Whiteningの適用|完了|
