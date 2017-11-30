@@ -10,8 +10,8 @@ This repository is a personal log of my study, mainly written in japanese langua
 　"Introduction to Programming 1" 全11コース（44題）について解答しています。  
     
 #### Deep_Learning_from_Scratch_n.ipynb  （終了）
-　ニューラルネットワークの基本的な実装について学ぶため、  
-　『[ゼロから作る Deep Learning　Pythonで学ぶディープラーニングの理論と実装](https://www.oreilly.co.jp/books/9784873117584/)』に基づいてコードを実装しています。    
+　ニューラルネットワークの基本的な実装について学ぶため、    
+　『[ゼロから作る Deep Learning　Pythonで学ぶディープラーニングの理論と実装](https://www.oreilly.co.jp/books/9784873117584/)』に基づいてコードを実装しています。      
 　次の教材と内容が重複するため、ノートブックでは5章までを扱っています。    
   
 #### Syoukai_DeepLearning_n.ipynb （現在作業中） 
