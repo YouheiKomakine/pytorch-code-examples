@@ -1,7 +1,5 @@
 
-このノートでは次の書籍を参考に、機械学習で用いられる典型的手法について学んでいきます。
-  
----
+Textbook : 
 
 ### 『[統計的学習の基礎　―データマイニング・推論・予測―](http://www.kyoritsu-pub.co.jp/bookdetail/9784320123625)』
 　Trevor Hastie ・Robert Tibshirani ・Jerome Friedman 著    
