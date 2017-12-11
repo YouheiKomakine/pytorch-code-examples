@@ -10,11 +10,13 @@
 　ISBN : 978-4-320-12362-5    
 　発売 : 2014/06      
   
+---  
 この本は次の本の翻訳である。  
 ### 『[The Elements of Statistical Learning: Data Mining, Inference, and Prediction. 2nd edition](https://web.stanford.edu/~hastie/ElemStatLearn/)』   
 　Trevor Hastie ・Robert Tibshirani ・Jerome Friedman  
 　Published : Feb. 2009  
-
+  
+---
 #### 各ノートブックの内容と進行状況 
 
 |notebook|該当する章|内容|進行状況|
