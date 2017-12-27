@@ -23,6 +23,7 @@ This repository is a personal log of my study, mainly written in japanese langua
 　サットン本『[強化学習　第１版](http://www.morikita.co.jp/books/book/1990)』（"[Reinforcement Learning](https://mitpress.mit.edu/books/reinforcement-learning)"の邦訳）に掲載されているアルゴリズムを実装しています。    
 　TD(0)のうちSARSA、Q学習の実装まで完了。  
 　詳解ディープラーニングの完了後に再開し、Deep Q-learning等を実装する予定です。  
-　
-#### NLP_by_Deep_Learning　（現在作業中）
-　機械学習プロフェッショナルシリーズ『[深層学習による自然言語処理](http://www.kspub.co.jp/book/detail/1529243.html)』
+
+#### NLP_by_Deep_Learning　（終了）
+　機械学習プロフェッショナルシリーズ『[深層学習による自然言語処理](http://www.kspub.co.jp/book/detail/1529243.html)』  
+　学習完了。
